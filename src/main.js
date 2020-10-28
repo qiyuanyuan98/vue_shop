@@ -8,6 +8,13 @@ import axios from 'axios'
 
 //配置axios的根路径
 axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
+//通过axios请求拦截器，添加token
+axios.interceptors.request.use(config=>{
+  // console.log(config);
+  //为请求头对象，添加token验证的Authorization字段
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 Vue.prototype.$http = axios
 
 /*导入全局样式表*/
