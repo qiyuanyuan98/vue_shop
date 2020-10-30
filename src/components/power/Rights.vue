@@ -44,7 +44,6 @@ methods: {
     }
     //将获取的res值赋给 rightsList
     this.rightsList = res.data
-    console.log( this.rightsList);
   }
 },
 created() {

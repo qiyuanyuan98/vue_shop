@@ -47,7 +47,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page="querinfo.pagenum"
-      :page-sizes="[5, 10, 15, 20]"
+      :page-sizes="[2, 5, 10, 15]"
       :page-size="querinfo.pagesize"
       layout="total, sizes, prev, pager, next, jumper"
       :total="total"
