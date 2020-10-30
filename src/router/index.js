@@ -4,17 +4,19 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const Login = () =>
-    import ('../components/Login.vue')
+  import ('../components/Login.vue')
 const Home = () =>
-    import ('../components/Home.vue')
+  import ('../components/Home.vue')
 const Welcome = () =>
-    import ('../components/Welcome.vue')
+  import ('../components/Welcome.vue')
 const Users = () =>
-    import ('../components/user/Users.vue')
+  import ('../components/user/Users.vue')
 const Rights = () =>
-    import ('../components/power/Rights.vue')
+  import ('../components/power/Rights.vue')
 const Roles = () =>
-    import ('../components/power/Roles.vue')
+  import ('../components/power/Roles.vue')
+const Cate = () =>
+  import ('../components/goods/Cate.vue')    
 const routes = [
   {
     path:'/',
@@ -40,6 +42,9 @@ const routes = [
    },{
     path:'/roles',
     component:Roles
+  },{
+    path:'/categories',
+    component:Cate
   }]
  }
 ]

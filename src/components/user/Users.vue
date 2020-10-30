@@ -358,7 +358,6 @@ methods: {
     this.userinfo = {}
   },
 
-
 },
 created() {
   this.getUsersList()
