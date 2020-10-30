@@ -6,6 +6,12 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios'
 import TreeTable from 'vue-table-with-tree-grid'
+<<<<<<< HEAD
+=======
+
+//注册全局可用组件
+Vue.component('tree-table',TreeTable )
+>>>>>>> goods_params
 
 //配置axios的根路径
 axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
