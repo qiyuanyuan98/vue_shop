@@ -5,6 +5,7 @@ import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios'
+import TreeTable from 'vue-table-with-tree-grid'
 
 //配置axios的根路径
 axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
@@ -16,7 +17,7 @@ axios.interceptors.request.use(config=>{
   return config
 })
 Vue.prototype.$http = axios
-
+Vue.component('tree-table', TreeTable)
 /*导入全局样式表*/
 import './assets/css/global.css'
 Vue.use(ElementUI);

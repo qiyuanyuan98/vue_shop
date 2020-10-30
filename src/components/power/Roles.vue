@@ -176,7 +176,6 @@ methods: {
       if(!vaild) return 
       //如果通过了 可以发起真正的网络请求
       const {data:res} = await this.$http.post('roles',this.addForm)
-      console.log(res);
       if(res.meta.status !== 201) return this.$message.error('添加用户失败')
       this.$message.success('添加用户成功')
       //隐藏添加的对话框
@@ -211,7 +210,6 @@ methods: {
       if(!valid) return
       //发起修改用户信息的请求
      const {data:res} = await this.$http.put('roles/' + this.editForm.roleId,{roleName:this.editForm.roleName})
-     console.log(res);
      if(res.meta.status !== 200) {return this.$message.error('更新用户信息失败')}
      //关闭对话框
      this.editDilogVisible = false
