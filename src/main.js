@@ -8,17 +8,30 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
+//导入 nprogress 进度条
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 //引用axios
 import axios from 'axios'
 //配置axios的根路径
 axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
+
+//在 request 拦截器中，展示进度条 NProgress.start()
 //通过axios请求拦截器，添加token
 axios.interceptors.request.use(config=>{
   // console.log(config);
+  NProgress.start()
   //为请求头对象，添加token验证的Authorization字段
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
 })
+//在response拦截器中，隐藏进度条 NProgress.done()
+axios.interceptors.response.use(config => {
+  NProgress.done()
+  return config
+})
+
 //全局挂载
 Vue.prototype.$http = axios
 
