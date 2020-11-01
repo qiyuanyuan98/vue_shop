@@ -273,10 +273,10 @@ methods: {
       //this.addForm.goods_car 有双向绑定 需要拷贝一份 操作拷贝的参数
       //lodash  cloneDeep(obj) 深拷贝
       var form = _.cloneDeep(this.addForm);
-      console.log(form);
       form.goods_cat = form.goods_cat.join(',')
-      
       // console.log(form);
+      console.log(this.manyTableDate);
+      console.log(this.onlyTableDate);
       //处理动态参数 
       this.manyTableDate.forEach(item => {
         const newInfo = {
