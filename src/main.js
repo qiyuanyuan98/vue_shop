@@ -24,6 +24,7 @@ Vue.prototype.$http = axios
 
 //注册全局可用的table树组件
 import TreeTable from 'vue-table-with-tree-grid'
+
 //注册组件
 Vue.component('tree-table', TreeTable)
 

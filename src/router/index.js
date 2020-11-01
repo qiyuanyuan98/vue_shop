@@ -27,7 +27,6 @@ const Order = () =>
   import ('../components/order/Order.vue')
 const Report = () =>
   import ('../components/report/Report.vue')
-
 const routes = [
   {
     path:'/',
@@ -71,6 +70,7 @@ const routes = [
   },{
     path:'/reports',
     component:Report
+
   }]
  }
 ]
