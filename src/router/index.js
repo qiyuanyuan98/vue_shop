@@ -14,18 +14,17 @@ const Users = () =>
 const Rights = () =>
   import ('../components/power/Rights.vue')
 const Roles = () =>
-<<<<<<< HEAD
-    import ('../components/power/Roles.vue')
-const Cate = () =>
-    import ('../components/goods/Cate.vue')
-=======
   import ('../components/power/Roles.vue')
 const Cate = () =>
-  import ('../components/goods/Cate.vue')    
+  import ('../components/goods/Cate.vue')   
 const Params = () =>
   import ('../components/goods/Params.vue')
-
->>>>>>> goods_params
+const List = () =>
+  import ('../components/goods/List.vue')
+const Add = () =>
+  import ('../components/goods/Add.vue')
+const Order = () =>
+  import ('../components/order/Order.vue')
 const routes = [
   {
     path:'/',
@@ -54,12 +53,18 @@ const routes = [
   },{
     path:'/categories',
     component:Cate
-<<<<<<< HEAD
-=======
   },{
     path:'/params',
     component:Params
->>>>>>> goods_params
+  },{
+    path:'/goods',
+    component:List
+  },{
+    path:'/goods/add',
+    component:Add
+  },{
+    path:'/orders',
+    component:Order
   }]
  }
 ]
