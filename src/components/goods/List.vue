@@ -136,13 +136,7 @@ return {
 };
 },
 computed: {
-  //定义商品id
-  // cateId(){
-  //   if(this.goodslist.goods_cat.length === 3){
-  //     return this.addForm.goods_cat[2]
-  //   }
-  //   return null
-  // },
+  
 },
 methods: {
   //根据分页获取所有的商品列表
@@ -151,7 +145,7 @@ methods: {
   if(res.meta.status !== 200){
     return this.$message.error('获取商品列表成功失败')
   }
-  this.$message.success('获取商品列表成功')
+  // this.$message.success('获取商品列表成功')
   //商品列表 赋值
   this.goodslist = res.data.goods
   //商品总数 赋值
@@ -195,7 +189,7 @@ methods: {
   },
   //点击编辑按钮 显示编辑对话框 赋值
   showEditList(edit){
-    console.log(this.goodslist);
+     this.$message.error('暂无接口，无法修改')
     //赋值给editCateForm.cat_id 输入框显示当前的id名称
     this.goods_id = edit.goods_id
     //赋值给editCateForm.cat_name 输入框显示当前的id名称
@@ -211,26 +205,28 @@ methods: {
   },
   //点击确定按钮 校验对话框 隐藏对话框
   editList(){
-    //关闭对话框验证
+    //1.点击确定 对话框验证
     this.$refs.editRefs.validate(async valid=>{
       if(!valid) return
-      const {data:res} = await this.$http.put(`goods/${this.goods_id}`,
-      {goods_name:this.editRuleForm.goods_name,
-      goods_number:this.editRuleForm.goods_number,
-      goods_price:this.editRuleForm.goods_price,
-      goods_weight:this.editRuleForm.goods_weight,
-      })
-      console.log(this.goods_id);
-      console.log(res);
+      //2.获取接口
+      // const {data:res} = await this.$http.put(`goods/${this.goods_id}`,
+      // {goods_name:this.editRuleForm.goods_name,
+      // goods_number:this.editRuleForm.goods_number,
+      // goods_price:this.editRuleForm.goods_price,
+      // goods_weight:this.editRuleForm.goods_weight,
+      // })
       // if(res.meta.status !== 201){
       //   return this.$message.error('更新失败')
       // }
       // this.$message.success('修改成功')
-      //刷新列表
+      //3. 刷新列表
       this.getGoodsList()
-      //关闭编辑对话框
-      this.editVisiable = false
+      // 4.关闭编辑对话框
+      // this.editVisiable = false
     })
+    this.$message.error('暂无接口，无法修改')
+    this.editVisiable = false
+
   }
 },
 created() {
